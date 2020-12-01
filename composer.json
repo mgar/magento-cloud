@@ -1,9 +1,12 @@
 {
-    "name": "magento/project-enterprise-edition",
+    "name": "magento/magento-cloud-template",
     "description": "eCommerce Platform for Growth (Enterprise Edition)",
     "type": "project",
-    "version": "2.4.0",
-    "license": "OSL-3.0",
+    "version": "2.4.1",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
     "config": {
         "preferred-install": "dist",
         "sort-packages": true
@@ -19,7 +22,7 @@
     "require": {
         "magento/magento-cloud-docker": "dev-develop",
         "magentoese/ece-tools": "2002.1.1.x-dev",
-        "magento/magento-cloud-metapackage": ">=2.4.0 <2.4.1"
+        "magento/magento-cloud-metapackage": ">=2.4.1 <2.4.2"
     },
     "suggest": {
         "ext-pcntl": "Need for run processes in parallel mode"
@@ -78,5 +81,16 @@
         },
         "magento-force": true,
         "magento-deploystrategy": "copy"
+    },
+    "scripts": {
+        "generate-schema": [
+            "php ./vendor/bin/ece-tools schema:generate || true"
+        ],
+        "post-install-cmd": [
+            "@generate-schema"
+        ],
+        "post-update-cmd": [
+            "@generate-schema"
+        ]
     }
 }
