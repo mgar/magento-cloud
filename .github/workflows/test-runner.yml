@@ -46,7 +46,7 @@ jobs:
           tar -rf release.tar app/etc/config.php
       - if: ${{ success() }}
         run: |
-          echo ::set-env name=RELEASE_TAG::"${GITHUB_REF#refs/heads/}-$(git rev-parse --short HEAD)"
+          echo "RELEASE_TAG=${GITHUB_REF#refs/heads/}-$(git rev-parse --short HEAD)" >> $GITHUB_ENV
       - if: ${{ success() }}
         uses: PMET-public/github-release@master
         with:
