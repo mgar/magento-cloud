@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5e19e08249ac89eeefaed15e68aa53c2",
+    "content-hash": "3e5a9a4c4ad29848b98717f0fd74cc4b",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -519,16 +519,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.173.3",
+            "version": "3.173.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "b805c50f0338180e7328c7ad5bcb0aceae11a75a"
+                "reference": "1400b2d08ded25bd9c6876edb0490b8cb9aeaa60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b805c50f0338180e7328c7ad5bcb0aceae11a75a",
-                "reference": "b805c50f0338180e7328c7ad5bcb0aceae11a75a",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/1400b2d08ded25bd9c6876edb0490b8cb9aeaa60",
+                "reference": "1400b2d08ded25bd9c6876edb0490b8cb9aeaa60",
                 "shasum": ""
             },
             "require": {
@@ -600,7 +600,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2021-02-04T21:45:53+00:00"
+            "time": "2021-02-05T19:19:35+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -24204,6 +24204,29 @@
             "time": "2020-07-21T15:32:39+00:00"
         },
         {
+            "name": "magentoese/module-keep-on-wishlist",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:PMET-public/module-keep-on-wishlist.git",
+                "reference": "7999df3e5710489707868edaff886cae09af59ee"
+            },
+            "require": {
+                "magento/module-wishlist": "*"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "psr-4": {
+                    "MagentoEse\\KeepInWishlist\\": ""
+                },
+                "files": [
+                    "registration.php"
+                ]
+            },
+            "description": "This module adds an admin configuration option to allow items that are added to a whish list to remain on that list after they are added to the cart.",
+            "time": "2021-01-20T16:49:03+00:00"
+        },
+        {
             "name": "magentoese/module-lookbook",
             "version": "dev-master",
             "source": {
@@ -29571,6 +29594,7 @@
         "magentoese/module-installation-overrides": 20,
         "magentoese/module-instorepickup": 20,
         "magentoese/module-instorepickup-sample-data": 20,
+        "magentoese/module-keep-on-wishlist": 20,
         "magentoese/module-lookbook": 20,
         "magentoese/module-luma-de-attributes": 20,
         "magentoese/module-luma-de-categories": 20,

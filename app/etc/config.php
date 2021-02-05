@@ -496,6 +496,7 @@ return [
         'MagentoEse_LumaDESetup' => 1,
         'MagentoEse_LumaDEAttributes' => 1,
         'MagentoEse_LumaDECategories' => 1,
+        'MagentoEse_KeepInWishlist' => 1,
         'MagentoEse_LumaDEProducts' => 1,
         'MagentoEse_DemoSampleOrderData' => 1,
         'MagentoEse_LumaDECms' => 1,
