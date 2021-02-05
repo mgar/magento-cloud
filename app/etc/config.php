@@ -504,6 +504,7 @@ return [
         'MagentoEse_DataInstall' => 1,
         'MagentoEse_DemoUpgrades' => 1,
         'MagentoEse_InstallationOverrides' => 1,
+        'MagentoEse_KeepInWishlist' => 1,
         'MagentoEse_MagentoScripts' => 1,
         'MagentoEse_B2bCmsSampleData' => 1,
         'MagentoEse_ProductBadge' => 1,
