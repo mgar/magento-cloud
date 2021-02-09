@@ -2,7 +2,7 @@
     "name": "magento/project-enterprise-edition",
     "description": "eCommerce Platform for Growth (Enterprise Edition)",
     "type": "project",
-    "version": "2.4.1",
+    "version": "2.4.2",
     "license": "proprietary",
     "config": {
         "preferred-install": "dist",
@@ -16,7 +16,7 @@
         {"type": "git", "url": "git@github.com:PMET-public/amasty-module-base.git"},
         {"type": "git", "url": "git@github.com:PMET-public/amasty-module-free-gift.git"},
         {"type": "git", "url": "git@github.com:PMET-public/amasty-module-geoip.git"},
-        {"type": "git", "url": "git@github.com:PMET-public/amasty-module-product-attachments.git"},
+        //{"type": "git", "url": "git@github.com:PMET-public/amasty-module-product-attachments.git"},
         {"type": "git", "url": "git@github.com:PMET-public/amasty-module-rules-grid.git"},
         {"type": "git", "url": "git@github.com:PMET-public/amasty-module-salesrulewizard.git"},
         {"type": "git", "url": "git@github.com:PMET-public/amasty-module-special-promotions-pro.git"},
@@ -90,10 +90,10 @@
         "amasty/module-salesrulewizard": "1.0.2.x-dev",
         "amasty/module-special-promo": "2.7.18.x-dev",
         "amasty/module-special-promo-pro": "2.8.4.x-dev",
-        //"amasty/module-store-locator": "2.4.5.x-dev",
-        // //using 1.x version, 2.3 has sql error
+        "amasty/module-store-locator": "2.4.0.x-dev",
+        // Removed amasty product attachment
         //"amasty/product-attachment": "1.3.3.x-dev",
-        //"amasty/product-attachment": "2.4.1.x-dev",
+        //"amasty/product-attachment": "2.4.1.x-dev"
         "amasty/promo": "2.10.0.x-dev",
         "amasty/rgrid": "1.0.7.x-dev",
         "classyllama/module-owlcarousel":"dev-master",
