@@ -2,7 +2,7 @@
     "name": "magento/project-enterprise-edition",
     "description": "eCommerce Platform for Growth (Enterprise Edition)",
     "type": "project",
-    "version": "2.4.1",
+    "version": "2.4.2",
     "license": "proprietary",
     "config": {
         "preferred-install": "dist",
@@ -17,7 +17,7 @@
     ],
     "require": {
         "magento/magento-cloud-docker": "dev-develop",
-        "magento/magento-cloud-metapackage": ">=2.4.1 <2.4.2",
+        "magento/magento-cloud-metapackage": ">=2.4.2 <2.4.3",
         "magentoese/ece-tools": "2002.1.1.x-dev",
         "magentoese/magento-scripts": "2.3.0.x-dev",
         "magentoese/module-data-install": "dev-master"
