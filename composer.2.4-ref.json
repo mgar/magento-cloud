@@ -1,9 +1,9 @@
 {
-    "name": "magento/project-enterprise-edition",
+    "name": "magento/magento-cloud-template",
     "description": "eCommerce Platform for Growth (Enterprise Edition)",
     "type": "project",
     "version": "2.4.2",
-    "license": "proprietary",
+    "license": "OSL-3.0",
     "config": {
         "preferred-install": "dist",
         "sort-packages": true
@@ -19,7 +19,6 @@
     ],
     "require": {
         "magento/magento-cloud-docker": "dev-develop",
-        "magento/magento-cloud-metapackage": ">=2.4.2 <2.4.3",
         "magento/module-bundle-sample-data": "100.4.*",
         "magento/module-catalog-rule-sample-data": "100.4.*",
         "magento/module-catalog-sample-data": "100.4.*",
@@ -51,7 +50,9 @@
         "magentoese/magento-scripts": "2.3.0.x-dev",
         "magentoese/module-admin-configurations": "dev-master",
         "magentoese/module-data-install": "dev-master",
-        "magentoese/module-demo-upgrades-240": "dev-master"
+        "magentoese/module-demo-upgrades-240": "dev-master",
+        "magento/magento-cloud-metapackage": ">=2.4.2 <2.4.3",
+        "magento/composer-root-update-plugin": "~1.1"
     },
     "suggest": {
         "ext-pcntl": "Need for run processes in parallel mode"
@@ -123,15 +124,12 @@
             "curl -sS -o vendor/bin/mr https://files.magerun.net/n98-magerun2-latest.phar && chmod +x vendor/bin/mr"
         ],
         "post-install-cmd" : [
-            "@generate-schema",
             // enable error reporting
-            "mv pub/errors/local.xml.sample pub/errors/local.xml || :"
+            "mv pub/errors/local.xml.sample pub/errors/local.xml || :",
+            "@generate-schema"
         ],
         "post-update-cmd": [
             "@generate-schema"
         ]
-    },
-    "replace": {
-        "magento/google-shopping-ads": "*"
     }
 }
