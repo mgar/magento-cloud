@@ -1,9 +1,9 @@
 {
-    "name": "magento/project-enterprise-edition",
+    "name": "magento/magento-cloud-template",
     "description": "eCommerce Platform for Growth (Enterprise Edition)",
     "type": "project",
     "version": "2.4.2",
-    "license": "proprietary",
+    "license": "OSL-3.0",
     "config": {
         "preferred-install": "dist",
         "sort-packages": true
@@ -175,15 +175,12 @@
             "curl -sS -o vendor/bin/mr https://files.magerun.net/n98-magerun2-latest.phar && chmod +x vendor/bin/mr"
         ],
         "post-install-cmd" : [
-            "@generate-schema",
             // enable error reporting
-            "mv pub/errors/local.xml.sample pub/errors/local.xml || :"
+            "mv pub/errors/local.xml.sample pub/errors/local.xml || :",
+            "@generate-schema"
         ],
         "post-update-cmd": [
             "@generate-schema"
         ]
-    },
-    "replace": {
-        "magento/google-shopping-ads": "*"
     }
 }
