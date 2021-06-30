@@ -1,8 +1,8 @@
 {
-    "name": "magento/magento-cloud-template",
-    "description": "eCommerce Platform for Growth (Enterprise Edition)",
+    "name": "magento/marketplace-store",
+    "description": "Magento Marketplace Store",
     "type": "project",
-    "version": "2.4.1",
+    "version": "2.4.2",
     "license": [
         "OSL-3.0",
         "AFL-3.0"
@@ -12,17 +12,87 @@
         "sort-packages": true
     },
     "repositories": {
-        "mcd": {"type": "git", "url": "git@github.com:PMET-public/magento-cloud-docker.git"},
-        "et": {"type": "git", "url": "git@github.com:PMET-public/ece-tools.git"},
+        "fastly-magento2": {
+            "type": "vcs",
+            "url": "https://github.com/fastly/fastly-magento2"
+        },
+        "algoliasearch-magento-2": {
+            "type": "git",
+            "url": "git@github.com:magento-marketplace-store/algoliasearch-magento-2.git"
+        },
         "repo": {
             "type": "composer",
-            "url": "https://repo.magento.com"
+            "url": "https://repo.magento.com",
+            "exclude": ["bazaarvoice/bazaarvoice-magento2-ext"]
         }
     },
     "require": {
-        "magento/magento-cloud-docker": "dev-develop",
-        "magentoese/ece-tools": "2002.1.1.x-dev",
-        "magento/magento-cloud-metapackage": ">=2.4.1 <2.4.2"
+        "algolia/algoliasearch-magento-2": "1.13.1.7",
+        "bazaarvoice/bazaarvoice-magento2-ext": "^7.2.5",
+        "fastly/magento2": "^1.2.131",
+        "magento/ece-tools": "^2002.1.0",
+        "magento/product-enterprise-edition": "2.4.2-p1",
+        "magento/product-recommendations": "^3.0",
+        "makotokw/twient": "^0.7.0",
+        "paypal/module-braintree": "^4.1",
+        "sixtomartin/onelogin-module-saml2-extend": "^1.6"
+    },
+    "replace": {
+        "magento/module-adobe-stock-asset": "*",
+        "magento/module-adobe-stock-asset-api": "*",
+        "magento/module-adobe-stock-image": "*",
+        "magento/module-adobe-stock-image-admin-ui": "*",
+        "magento/module-adobe-stock-image-api": "*",
+        "magento/module-adobe-stock-client": "*",
+        "magento/module-adobe-stock-client-api": "*",
+        "magento/module-adobe-stock-admin-ui": "*",
+        "magento/module-adobe-ims": "*",
+        "magento/module-adobe-ims-api": "*",
+        "magento/module-login-as-customer": "*",
+        "magento/module-login-as-customer-admin-ui": "*",
+        "magento/module-login-as-customer-api": "*",
+        "magento/module-login-as-customer-frontend-ui": "*",
+        "magento/module-login-as-customer-graph-ql": "*",
+        "magento/module-login-as-customer-log": "*",
+        "magento/module-login-as-customer-logging": "*",
+        "magento/module-login-as-customer-page-cache": "*",
+        "magento/module-login-as-customer-quote": "*",
+        "magento/module-login-as-customer-sales": "*",
+        "magento/module-login-as-customer-website-restriction": "*",
+        "magento/module-login-as-customer-assistance": "*",
+        "magento/google-shopping-ads": "*",
+        "magento/module-cardinal-commerce": "*",
+        "magento/module-admin-analytics": "*",
+        "magento/module-fedex": "*",
+        "magento/module-usps": "*",
+        "magento/module-ups": "*",
+        "magento/module-dhl": "*",
+        "magento/module-offline-payments": "*",
+        "magento/module-offline-shipping": "*",
+        "magento/module-weee": "*",
+        "magento/module-weee-graph-ql": "*",
+        "magento/module-weee-staging": "*",
+        "magento/module-swagger": "*",
+        "magento/module-swagger-webapi": "*",
+        "magento/module-swagger-webapi-async": "*",
+        "magento/module-scalable-inventory": "*",
+        "magento/module-scalable-oms": "*",
+        "magento/module-scalable-checkout": "*",
+        "magento/module-re-captcha-version-3-invisible": "*",
+        "magento/module-re-captcha-version-2-invisible": "*",
+        "magento/module-re-captcha-version-2-checkbox": "*",
+        "amzn/login-with-amazon-module": "*",
+        "amzn/amazon-pay-module": "*",
+        "amzn/amazon-pay-and-login-with-amazon-core-module": "*",
+        "klarna/module-core": "*",
+        "klarna/module-kp": "*",
+        "klarna/module-onsitemessaging": "*",
+        "klarna/module-ordermanagement": "*",
+        "klarna/module-kp-graph-ql": "*",
+        "vertex/module-address-validation": "*",
+        "vertex/module-tax": "*",
+        "vertex/module-tax-staging": "*",
+        "yotpo/magento2-module-yotpo-reviews": "*"
     },
     "suggest": {
         "ext-pcntl": "Need for run processes in parallel mode"
@@ -34,7 +104,8 @@
         "psr-4": {
             "Magento\\Setup\\": "setup/src/Magento/Setup/",
             "Magento\\": "app/code/Magento/",
-            "Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"
+            "Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/",
+            "Magento\\AppStore\\MagentoCloud\\": "dev/tools/AppStore/MagentoCloud/src/"
         },
         "psr-0": {
             "": [
@@ -43,7 +114,8 @@
             ]
         },
         "files": [
-            "app/etc/NonComposerComponentRegistration.php"
+            "app/etc/NonComposerComponentRegistration.php",
+            "dev/tools/AppStore/MagentoCloud/registration.php"
         ],
         "exclude-from-classmap": [
             "**/dev/**",
@@ -60,7 +132,7 @@
             "Magento\\TestFramework\\Utility\\": "dev/tests/static/framework/Magento/TestFramework/Utility/"
         }
     },
-    "minimum-stability": "alpha",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "extra": {
         "component_paths": {
@@ -81,16 +153,5 @@
         },
         "magento-force": true,
         "magento-deploystrategy": "copy"
-    },
-    "scripts": {
-        "generate-schema": [
-            "php ./vendor/bin/ece-tools schema:generate || true"
-        ],
-        "post-install-cmd": [
-            "@generate-schema"
-        ],
-        "post-update-cmd": [
-            "@generate-schema"
-        ]
     }
 }
