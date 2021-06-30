@@ -17,8 +17,8 @@
             "url": "https://github.com/fastly/fastly-magento2"
         },
         "algoliasearch-magento-2": {
-            "type": "vcs",
-            "url": "https://github.com/magento-marketplace-store/algoliasearch-magento-2"
+            "type": "git",
+            "url": "git@github.com:magento-marketplace-store/algoliasearch-magento-2.git"
         },
         "repo": {
             "type": "composer",
